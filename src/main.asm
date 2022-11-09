@@ -4,6 +4,7 @@
 ;
 ; Todo:
 ;   - Either a button press or a Random Number UART exchange to detrmine who is player 1 and player 2.
+;   - Add diagonal support for ball
 
 
 
@@ -103,7 +104,11 @@ main:
 
 
 
-; FIND ME! Main game loop!
+; Primary game loop
+; 
+;   - Check if waiting for ball position over UART
+;       - Check if recieved ball position
+;       - Loop back if ball position not recieved.
 waitinput:
     mov r2, Page_Ball
     mov r3, Ball_Recieve_Waiting
